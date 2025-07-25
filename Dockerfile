@@ -5,7 +5,8 @@ ARG PLAYTIME_EJS_REVISION
 ARG PLAYTIME_EJS_CORES_URL
 
 ENV DEBIAN_FRONTEND=noninteractive
-
+ENV GO111MODULE=on
+ENV GOPROXY=https://goproxy.cn,direct
 ADD . /build
 
 RUN cd /build &&\
