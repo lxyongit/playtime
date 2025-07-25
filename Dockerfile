@@ -5,11 +5,19 @@ ARG PLAYTIME_EJS_REVISION
 ARG PLAYTIME_EJS_CORES_URL
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV GO111MODULE=on
-ENV GOPROXY=https://goproxy.cn,direct
+
 ADD . /build
 
-RUN cd /build &&\
+RUN sed -i 's/archive.ubuntu.com/mirrors.huaweicloud.com/g' /etc/apt/sources.list \
+    && sed -i 's/security.ubuntu.com/mirrors.huaweicloud.com/g' /etc/apt/sources.list
+
+RUN apt-get update &&\
+    apt-get install -y curl git gpg wget zip unzip &&\
+    curl -fsSL https://mirrors.huaweicloud.com/gpgkey/nodesource.gpg.key | gpg --dearmor >> /nodesource-key.gpg &&\
+    echo "deb [signed-by=/nodesource-key.gpg] https://mirrors.huaweicloud.com/node_20.x bookworm main" >> /etc/apt/sources.list.d/nodesource.list &&\
+    echo "deb-src [signed-by=/nodesource-key.gpg] https://mirrors.huaweicloud.com/node_20.x bookworm main" >> /etc/apt/sources.list.d/nodesource.list &&\
+    apt-get install -y nodejs npm &&\
+    cd /build &&\
     CGO_ENABLED=0 GOOS=linux go build -a -o app . &&\
     ./install.sh
 
