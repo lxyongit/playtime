@@ -8,8 +8,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 ADD . /build
 
-RUN sed -i 's/archive.ubuntu.com/mirrors.huaweicloud.com/g' /etc/apt/sources.list \
-    && sed -i 's/security.ubuntu.com/mirrors.huaweicloud.com/g' /etc/apt/sources.list
+RUN sed -i 's/archive.ubuntu.com/mirrors.huaweicloud.com/g' /etc/apt/sources.list.d \
+    && sed -i 's/security.ubuntu.com/mirrors.huaweicloud.com/g' /etc/apt/sources.list.d
 
 RUN apt-get update &&\
     apt-get install -y curl git gpg wget zip unzip &&\
