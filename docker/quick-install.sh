@@ -23,9 +23,6 @@ if [ -z "${DOMAIN}" ]; then
 fi
 
 echo ">>>>>>>>>> INSTALL DOCKER <<<<<<<<<<"
-sudo systemctl stop docker
-sudo dockerd --registry-mirror=https://docker.registry.cyou/ & 
-DOCKERD_PID=$!
 
 apt-get update
 apt-get install -yq git openssl
@@ -56,7 +53,7 @@ if [ ! -d build ]; then
   git clone "https://gh-proxy.com/github.com/lxyongit/playtime" "build"
 fi
 cd build
-docker image build -t "playtime:latest" .
+sudo docker image build -t "playtime:latest" .
 cd ..
 
 echo ">>>>>>>>>> LET'S ENCRYPT CERTIFICATE <<<<<<<<<<"
@@ -121,7 +118,6 @@ cp "../build/docker/router/playtime.conf" "conf/vhost.conf"
 sed -i "s/REPLACE_DOMAIN/${DOMAIN}/g" "conf/vhost.conf"
 $DOCKER_COMPOSE up -d --force-recreate
 cd ..
-sudo kill -9 $DOCKERD_PID
 
 sleep 5
 playtime_password=$(cat "playtime/data/admin.password")
