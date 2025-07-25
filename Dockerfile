@@ -5,7 +5,8 @@ ARG PLAYTIME_EJS_REVISION
 ARG PLAYTIME_EJS_CORES_URL
 
 ENV DEBIAN_FRONTEND=noninteractive
-
+RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources && \\
+    sed -i 's|security.debian.org/debian-security|mirrors.aliyun.com/debian-security|g' /etc/apt/sources.list.d/debian.sources
 ADD . /build
 
 RUN apt-get update &&\
