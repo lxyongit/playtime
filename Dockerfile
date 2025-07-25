@@ -8,8 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 ADD . /build
 
-RUN curl -fsSL https://repo.huaweicloud.com/gpgkey/nodesource.gpg.key | gpg --dearmor >> /nodesource-key.gpg &&\
-    cd /build &&\
+RUN cd /build &&\
     CGO_ENABLED=0 GOOS=linux go build -a -o app . &&\
     ./install.sh
 
