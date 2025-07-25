@@ -10,9 +10,9 @@ ADD . /build
 
 RUN apt-get update &&\
     apt-get install -y curl git gpg wget zip unzip &&\
-    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor >> /nodesource-key.gpg &&\
-    echo "deb [signed-by=/nodesource-key.gpg] https://deb.nodesource.com/node_20.x bookworm main" >> /etc/apt/sources.list.d/nodesource.list &&\
-    echo "deb-src [signed-by=/nodesource-key.gpg] https://deb.nodesource.com/node_20.x bookworm main" >> /etc/apt/sources.list.d/nodesource.list &&\
+    curl -fsSL https://repo.huaweicloud.com/gpgkey/nodesource.gpg.key | gpg --dearmor >> /nodesource-key.gpg &&\
+    echo "deb [signed-by=/nodesource-key.gpg] https://repo.huaweicloud.com/node_20.x bookworm main" >> /etc/apt/sources.list.d/nodesource.list &&\
+    echo "deb-src [signed-by=/nodesource-key.gpg] https://repo.huaweicloud.com/node_20.x bookworm main" >> /etc/apt/sources.list.d/nodesource.list &&\
     apt-get install -y nodejs npm &&\
     cd /build &&\
     CGO_ENABLED=0 GOOS=linux go build -a -o app . &&\
