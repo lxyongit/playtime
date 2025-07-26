@@ -1,8 +1,8 @@
 #!/bin/bash
 
 PLAYTIME_EJS_REPO_URL=${PLAYTIME_EJS_REPO_URL:-"https://gh-proxy.com/github.com/EmulatorJS/EmulatorJS"}
-PLAYTIME_EJS_REVISION=${PLAYTIME_EJS_REVISION:-"bb51c13eabad53f6ee18828fc80f358a90f6596d"}
-PLAYTIME_EJS_CORES_URL=${PLAYTIME_EJS_CORES_URL:-"https://cdn.emulatorjs.org/stable/data/cores"}
+PLAYTIME_EJS_REVISION=${PLAYTIME_EJS_REVISION:-"v4.2.3"}
+PLAYTIME_EJS_CORES_URL=${PLAYTIME_EJS_CORES_URL:-"https://cdn.emulatorjs.org/4.2.3/data/cores"}
 
 #
 
