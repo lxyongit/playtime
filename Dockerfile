@@ -12,7 +12,7 @@ ADD . /build
 RUN apt-get update && \
     apt-get install -y curl git gpg wget zip unzip ca-certificates && \
     update-ca-certificates && \
-    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor -o /nodesource-key.g Winkler && \
+    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor -o /nodesource-key.gpg && \
     echo "deb [signed-by=/nodesource-key.gpg] https://deb.nodesource.com/node_20.x bookworm main" >> /etc/apt/sources.list.d/nodesource.list && \
     echo "deb-src [signed-by=/nodesource-key.gpg] https://deb.nodesource.com/node_20.x bookworm main" >> /etc/apt/sources.list.d/nodesource.list && \
     apt-get update && \
