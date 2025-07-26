@@ -56,17 +56,17 @@ cd build
 sudo docker image build -t "playtime:latest" .
 cd ..
 
-echo ">>>>>>>>>> LET'S ENCRYPT CERTIFICATE <<<<<<<<<<"
+# echo ">>>>>>>>>> LET'S ENCRYPT CERTIFICATE <<<<<<<<<<"
 
-mkdir -m 0777 certbot certbot/etc certbot/log certbot/var certbot/webroot
-cd certbot
-cp "../build/docker/certbot/docker-compose.yml" .
-sed -i "s/REPLACE_DOMAIN/${DOMAIN}/g" docker-compose.yml
-cd ..
+# mkdir -m 0777 certbot certbot/etc certbot/log certbot/var certbot/webroot
+# cd certbot
+# cp "../build/docker/certbot/docker-compose.yml" .
+# sed -i "s/REPLACE_DOMAIN/${DOMAIN}/g" docker-compose.yml
+# cd ..
 
-if [ ! -f "certbot/etc/dhparam.pem" ]; then
-  openssl dhparam -out "certbot/etc/dhparam.pem" 2048
-fi
+# if [ ! -f "certbot/etc/dhparam.pem" ]; then
+#   openssl dhparam -out "certbot/etc/dhparam.pem" 2048
+# fi
 
 mkdir -m 0777 router router/logs router/conf
 cd router
