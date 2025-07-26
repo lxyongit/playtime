@@ -15,7 +15,7 @@ RUN apt-get update && \
     echo "deb [signed-by=/nodesource-key.gpg] https://deb.nodesource.com/node_20.x bookworm main" >> /etc/apt/sources.list.d/nodesource.list && \
     echo "deb-src [signed-by=/nodesource-key.gpg] https://deb.nodesource.com/node_20.x bookworm main" >> /etc/apt/sources.list.d/nodesource.list && \
     apt-get update && \
-    apt-get install -y nodejs npm && \
+    apt-get install -y nodejs && \
     cd /build && \
     CGO_ENABLED=0 GOOS=linux go build -a -o app . && \
     ./install.sh
