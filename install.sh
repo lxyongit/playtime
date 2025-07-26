@@ -1,4 +1,11 @@
 #!/bin/bash
+
+#
+
+cd assets
+
+npm install --no-fund --ignore-scripts
+
 #download BIOS
 
 mkdir bios
