@@ -32,10 +32,10 @@ if ! command -v docker &> /dev/null; then
 fi
 
 if [ -x "$(command -v docker-compose)" ]; then
-    DOCKER_COMPOSE="docker-compose"
+    DOCKER_COMPOSE="sudo docker-compose"
     DOCKER_COMPOSE_CMD="$(which docker-compose)"
 elif $(docker compose &>/dev/null) && [ $? -eq 0 ]; then
-    DOCKER_COMPOSE="docker compose"
+    DOCKER_COMPOSE="sudo ocker compose"
     DOCKER_COMPOSE_CMD="$(which docker) compose"
 else
     apt-get install -yq docker-compose
