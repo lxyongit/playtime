@@ -50,7 +50,7 @@ fi
 echo ">>>>>>>>>> BUILD PLAYTIME IMAGE <<<<<<<<<<"
 
 if [ ! -d build ]; then
-  git clone "https://gh-proxy.com/github.com/lxyongit/playtime" "build"
+  git clone "https://gitee.com/lxyongitee/playtime.git" "build"
 fi
 cd build
 sudo docker image build -t "playtime:latest" .
