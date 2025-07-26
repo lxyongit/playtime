@@ -11,8 +11,10 @@ services:
       - "./logs:/var/log/nginx"
       - "./conf:/etc/nginx/conf.d:ro"
       - "../certbot/webroot:/opt/certbot/webroot:ro"
-      - "../certbot/etc:/etc/letsencrypt:ro"
-    restart: "always"
+      - "/etc/letsencrypt:/etc/letsencrypt:ro"  # 调整为实际主机证书路径
+    restart: "unless-stopped"  # 使用 unless-stopped 便于调试
+    networks:
+      - default
 
 networks:
   default:
