@@ -1,170 +1,46 @@
-# playtime
+# 复古游戏平台精选推荐
 
-Personal retro games library + [EmulatorJS](https://emulatorjs.org/) + Netplay.
+复古游戏是无数玩家童年记忆的珍宝，从红白机的像素冒险到街机的激情对战，总能勾起满满的怀旧情怀。如果你想重拾那些经典游戏的乐趣，以下推荐几个优质的复古游戏平台，涵盖网页、软件和小程序，助你轻松踏上时光之旅。
 
-Features:
+## 1. [zh.oldvideo.games](https://zh.oldvideo.games)
+这是一个专注[复古游戏](https://zh.oldvideo.games)的中文网站，收录了海量经典游戏资源，覆盖红白机（NES）、超级任天堂（SNES）、街机等多个平台。网站设计简洁，游戏分类清晰，支持在线畅玩或下载，适合快速重温经典的玩家。  
+**推荐理由**：  
+- **资源全面**：包含多种经典游戏平台，内容更新频繁。  
+- **即点即玩**：无需复杂设置，浏览器直接开玩。  
+- **社区互动**：玩家社区活跃，可分享攻略和回忆。  
+**适合人群**：偏好网页端随时随地玩复古游戏的用户。
 
-+ Multiple users with disk usage quota
-+ Keyboard and gamepad controls
-+ Save states
-+ Netplay - up to 4 players
+## 2. dosomegaming.com
+[dosomegaming.com](https://dosomegaming.com) 是一个国际化的复古游戏平台，专注于 DOS 和早期 PC 游戏的模拟体验。网站提供《毁灭战士》《命令与征服》等经典游戏，配备强大的模拟器支持，确保老游戏在现代设备上运行流畅。  
+**推荐理由**：  
+- **多平台兼容**：支持 Windows、Mac 和 Linux 系统。  
+- **高保真体验**：画面和音效还原度高，运行稳定。  
+- **多语言支持**：界面支持中文，适合全球玩家。  
+**适合人群**：热衷于 DOS 游戏或早期 PC 游戏的资深玩家。
 
-Platforms supported:
+## 3. RetroArch
+RetroArch 是一款功能强大的开源模拟器，支持几乎所有主流复古游戏平台，包括 NES、SNES、GBA、PS1 等。它跨平台运行（PC、手机、游戏机皆可），提供画面滤镜、存档功能和手柄支持等高级选项。  
+**推荐理由**：  
+- **全能模拟**：一个软件兼容多种游戏平台，功能强大。  
+- **高度自定义**：可调整画质、音效和按键，满足硬核需求。  
+- **开源免费**：社区支持强劲，更新快，修复及时。  
+**适合人群**：追求极致体验和自定义的技术型玩家。  
+**提示**：新手可能需要学习配置，建议参考官方文档或社区教程。
 
-+ 3DO
-+ Arcade
-+ Atari 2600
-+ Atari 5200
-+ Atari 7800
-+ Atari Jaguar
-+ Atari Lynx
-+ Bandai WonderSwan (Color)
-+ ColecoVision
-+ Commodore 128
-+ Commodore 64
-+ Commodore Amiga
-+ Commodore PET
-+ Commodore Plus/4
-+ Commodore VIC-20
-+ MAME 2003
-+ NEC PC-FX
-+ NEC TurboGrafx-16 / SuperGrafx / PC Engine
-+ Nintendo 64
-+ Nintendo DS
-+ Nintendo Famicom / NES
-+ Nintendo Game Boy (Color)
-+ Nintendo Game Boy Advance
-+ Nintendo Super Famicom / SNES
-+ Nintendo Virtual Boy
-+ SNK Neo Geo Pocket (Color)
-+ Sega CD
-+ Sega Game Gear
-+ Sega Master System
-+ Sega Mega Drive / Genesis
-+ Sega Saturn
-+ Sinclair ZX Spectrum
-+ Sony PlayStation
-+ Sony PlayStation Portable
+## 4. 小程序“复古FC街机NES红白机开心玩”
+这款微信小程序专为移动端打造，内置《超级马里奥》《魂斗罗》《街头霸王》等红白机和街机经典游戏。无需额外下载，打开即可玩，支持虚拟按键和触屏操作，简单便捷。  
+**推荐理由**：  
+- **开箱即玩**：无需安装，适合碎片化时间娱乐。  
+- **游戏丰富**：覆盖热门红白机和街机游戏，满足多样喜好。  
+- **轻便灵活**：依托微信生态，随时随地畅玩。  
+**适合人群**：喜欢用手机轻松玩经典游戏的休闲玩家。  
+**提示**：部分游戏需联网，建议在稳定网络下使用。
+  ![oldvideo](https://github.com/user-attachments/assets/1e2aecc9-57e1-4afb-9267-c179cde1be2f)
 
-## Quick installation with script
 
-Prerequisites:
+## 总结
+无论是 zh.oldvideo.games 的网页便利、dosomegaming.com 的 DOS 经典、RetroArch 的全能模拟，还是“复古FC街机NES红白机开心玩”小程序的轻量便携，这些平台各具特色，满足不同玩家的需求。选择适合自己的平台，开启一场复古游戏的怀旧冒险吧！  
 
-* A server with public IP address (for example, basic droplet on DO) running Ubuntu 22.04
-* A domain with `A` record with IP address of the server
-
-For example domain is `playtime.example.com` and IP is `10.10.10.10`.
-
-Ensure `A` record is correct:
-
-```bash
-dig +short playtime.example.com
-#should output correct IP address
-```
-
-On the server, execute:
-
-```bash
-mkdir playtime && cd playtime
-wget "https://github.com/n-at/playtime/raw/master/docker/quick-install.sh"
-chmod +x quick-install.sh
-./quick-install.sh "10.10.10.10" "playtime.example.com"
-```
-
-This script will:
-
-1. Install docker (if it is not installed)
-2. Run [coturn](https://github.com/coturn/coturn), a TURN/STUN/ICE server
-3. Get SSL certificate from [Let's Encrypt](https://letsencrypt.org/)
-4. Build and run playtime
-
-`admin` password will be in `playtime/data/admin.password` file.
-
-## Building
-
-Go 1.24+ and npm 7+ required.
-
-```bash
-./install.sh
-go build -a -o app
-```
-
-## Configuration
-
-Commandline arguments available:
-
-```
-$ ./app -help
-Usage of ./app:
-  -db-path string
-        db path (default "data/bolt.db")
-  -debug-emulator
-        debug emulator (extended browser console output)
-  -debug-netplay
-        debug netplay (extended browser console output)
-  -debug-templates
-        debug page templates (do not cache)
-  -listen string
-        address and port to listen (default ":3000")
-  -turn-server-password string
-        TURN/STUN/ICE server password (if required)
-  -turn-server-url string
-        TURN/STUN/ICE server host, required for netplay (example: turn:turn.example.com)
-  -turn-server-user string
-        TURN/STUN/ICE server user name (if required)
-  -uploads-path string
-        uploads path (default "uploads")
-  -verbose
-        show debug output
-```
-
-## docker
-
-Build an image:
-
-```bash
-docker image build -t playtime:latest .
-```
-
-Available image environment variables:
-
-* `PLAYTIME_TURN_URL`
-* `PLAYTIME_TURN_USER`
-* `PLAYTIME_TURN_PASSWORD`
-* `PLAYTIME_DEBUG_EMULATOR`
-* `PLAYTIME_DEBUG_TEMPLATES`
-* `PLAYTIME_DEBUG_NETPLAY`
-* `PLAYTIME_VERBOSE`
-
-Exposed volumes:
-
-* `/app/data` - database directory
-* `/app/uploads` - uploads directory
-
-Exposed default port `3000`.
-
-## Netplay
-
-TURN server is required for netplay. It can be obtained from:
-
-* [This list](https://gist.github.com/sagivo/3a4b2f2c7ac6e1b5267c2f1f59ac6c6b)
-* [Open Relay](https://www.metered.ca/tools/openrelay/)
-* Hosted, for example [coturn](https://github.com/coturn/coturn)
-
-For a particular game netplay needs to be enabled in game settings.
-
-## Uses
-
-* [labstack/echo](https://github.com/labstack/echo) - MIT
-* [flosch/pongo2](https://github.com/flosch/pongo2) - MIT
-* [sirupsen/logrus](https://github.com/sirupsen/logrus) - MIT
-* [timshannon/bolthold](https://github.com/timshannon/bolthold) - MIT
-* [google/uuid](https://github.com/google/uuid) - BSD-3-Clause
-* [twbs/bootstrap](https://github.com/twbs/bootstrap) - MIT
-* [twbs/icons](https://github.com/twbs/icons) - MIT
-* [sumimakito/Awesome-qr.js](https://github.com/sumimakito/Awesome-qr.js) - Apache-2.0
-* [lekoala/bootstrap5-tags](https://github.com/lekoala/bootstrap5-tags) - MIT
-* [@fontsource/comfortaa](https://www.npmjs.com/package/@fontsource/comfortaa) - OFL-1.1
-* [@fontsource/raleway](https://www.npmjs.com/package/@fontsource/raleway) - OFL-1.1
-* [EmulatorJS](https://github.com/EmulatorJS/EmulatorJS) - GPL-3.0 (not included)
-* BIOS files from respective vendors (not included)
+**小贴士**：  
+- 玩复古游戏时，注意选择合法授权的资源，尊重版权。  
+- 加入玩家社区，交流技巧和回忆，乐趣无穷！
